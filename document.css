@@ -108,11 +108,7 @@ margin-bottom: 30px;
     font-size: 36px;
     margin: 15px 0 25px 0;
  }
- 
 
-.doc-section {
-    display: none;
-}
 
 #section1 {
     display: block;
@@ -142,6 +138,24 @@ li.page-item a:hover {
 .page-item.disabled .page-link {
     border-color: #666;
 }
+
+.pdf-logo {
+    width: 400px;
+}
+
+.pdf-logo img{
+    max-width: 300%;
+}
+
+.printpdf {
+    float: right;
+    font-weight: normal;
+    font-size: 0.8em;
+    position: relative;
+    top: 7px;
+    cursor: pointer;
+}
+
 
 @media only screen and (min-width: 992px) {
     
@@ -192,10 +206,7 @@ li.page-item a:hover {
     display: none;
 }
 
-.pnlAdverts img {
-    max-width: 190px;
-}
-  
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -207,13 +218,19 @@ li.page-item a:hover {
      .navbar-brand {
      white-space: nowrap;
      }
-     
-    .pnlAdverts img {
-    max-width: 220px;
+  
 }
 
-.page-body {
-    padding-right: 50px;
+@media screen
+{
+   #doc-section, .pdf-logo { display: none;} 
+   .printpdf {display: inline;}
+   .pagination {display: flex;}
+   .feedback {display: block;}
 }
-    
+
+@media print
+{
+   #doc-section, .pdf-logo { display: block; } 
+   .printpdf, .pagination, .feedback {display: none;}
 }
