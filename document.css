@@ -223,7 +223,7 @@ li.page-item a:hover {
 
 @media screen
 {
-   #doc-section, .pdf-logo { display: none;} 
+   .doc-section, .pdf-logo { display: none;} 
    .printpdf {display: inline;}
    .pagination {display: flex;}
    .feedback {display: block;}
@@ -231,6 +231,6 @@ li.page-item a:hover {
 
 @media print
 {
-   #doc-section, .pdf-logo { display: block; } 
+   .doc-section, .pdf-logo { display: block !important; } 
    .printpdf, .pagination, .feedback {display: none;}
 }
