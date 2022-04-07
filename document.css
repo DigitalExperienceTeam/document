@@ -95,6 +95,7 @@ font-size: 21px;
     border-bottom: 1px solid #666;
     padding: 10px 0 5px;
     margin-bottom: 5px;
+    width: 98%;
 }
 
 .updated {
@@ -156,6 +157,76 @@ li.page-item a:hover {
     cursor: pointer;
 }
 
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0;
+}
+
+/*TABLE*/
+
+th {
+    background: #000;
+}
+
+/*INDEXING*/
+
+.indexed {
+    /*counter-reset: sub-section;*/
+    display: table;
+     border-collapse: separate;
+   border-spacing: 0 0.75em;
+    margin: 0;
+    padding: 0;
+}
+
+.indexed > li {
+    counter-increment: sub-section; 
+    list-style-type: none;
+    display: table-row;
+}
+
+.indexed> li:before {
+    display: table-cell;
+    padding-right: 10px;
+  content: counter(section) "." counter(sub-section) ;
+}
+
+.indexed ul {
+    margin:0;
+    padding: 0;
+}
+.indexed > li > ul > li {
+    counter-increment: sub-sub-section; 
+    list-style-type: none;
+    display: table-row;
+}
+
+.indexed> li > ul > li:before {
+    display: table-cell;
+    padding-right: 10px;
+  content: counter(section) "." counter(sub-section) "." counter(sub-sub-section);
+}
+
+.indexed > li > ul > li li {
+    list-style-type: disc;
+}
+@media screen
+{
+   .pdf-logo {display: none;}
+   
+   .printpdf {display: inline;}
+   .pagination {display: flex;}
+   .feedback {display: block;}
+}
+
+@media print
+{
+   .pdf-logo { display: block !important; } 
+   .printpdf, .pagination, .feedback {display: none;}
+}
 
 @media only screen and (min-width: 992px) {
     
@@ -207,7 +278,7 @@ li.page-item a:hover {
 }
 
 
-}
+
 
 @media only screen and (min-width: 1200px) {
     
@@ -221,16 +292,3 @@ li.page-item a:hover {
   
 }
 
-@media screen
-{
-   .doc-section, .pdf-logo { display: none;} 
-   .printpdf {display: inline;}
-   .pagination {display: flex;}
-   .feedback {display: block;}
-}
-
-@media print
-{
-   .doc-section, .pdf-logo { display: block !important; } 
-   .printpdf, .pagination, .feedback {display: none;}
-}
