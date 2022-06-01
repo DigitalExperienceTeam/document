@@ -72,7 +72,7 @@ $(document).ready(function() {
 
   }
 
-  // When left hand navk is clicked
+  // When left hand nav is clicked
 
   $(".nav-item a").click(function() {
     href = $(this).attr("href");
